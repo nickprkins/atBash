@@ -10,29 +10,18 @@
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        // insert code here...
-//        NSString *testString = @"draziw*";
-//        
-//        NSMutableArray *characters = [[NSMutableArray alloc] initWithCapacity:[testString length]];
-//        int otheri = 0;
-//        for (int i = 0; i < [testString length]; i++) {
-//            NSString *ichar  = [NSString stringWithFormat:@"%c", [testString characterAtIndex:i]];
-//            //[characters addObject:ichar];
-//            if (i == 0){
-//                [characters insertObject: ichar atIndex:i];
-//            }else{
-//                [characters insertObject:ichar atIndex:0];
-//            }
-//        }
-//        NSString *str = [characters componentsJoinedByString:@""];
-//        NSLog(@"%@", str);
+        
+        //setup cipher keys and message to cipher
         NSString *testString = @"Gsrh rh zm vcznkov lu gsv Zgyzhs Xrksvi!!";
         NSString *upperCaseAlphabet = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         NSString *lowerCaseAlphabet = @"abcdefghijklmnopqrstuvwxyz";
         NSMutableString *cipher = [[NSMutableString alloc]init];
         
+        // This will run through the length of the testString message and compare to the cipher alphabet keys.
         for (int i = 0; i < [testString length]; i++) {
             NSString *character = [NSString stringWithFormat:@"%C",[testString characterAtIndex: i]];
+            
+            //lowercase letters will be changed here.
             if ([lowerCaseAlphabet containsString: character] ) {
                 
                 for (NSUInteger ib=0;ib<[lowerCaseAlphabet length];ib++)
@@ -45,7 +34,8 @@ int main(int argc, const char * argv[]) {
                         [cipher appendString:addCharacter];
                     }
                 }
-                
+            
+            // uppercase letters will be changed here.
             }else if([upperCaseAlphabet containsString:character]){
                 
                 for (NSUInteger ib=0;ib<[upperCaseAlphabet length];ib++)
@@ -60,12 +50,14 @@ int main(int argc, const char * argv[]) {
                 }
                 
             }else{
-                // do nothing and add the odd character to the output
+                
+                // Characters will not be changed, but will just be appended to the cipher as is.
                 [cipher appendString:character];
                 
             }
         }
         
+        // Print out the results!
         NSLog(@"The cipher of '%@' is '%@'", testString, cipher);
         
     }
