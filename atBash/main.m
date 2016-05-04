@@ -26,7 +26,7 @@ int main(int argc, const char * argv[]) {
 //        }
 //        NSString *str = [characters componentsJoinedByString:@""];
 //        NSLog(@"%@", str);
-        NSString *testString = @"gsrh rh zm vcznkov lu gsv zgyzhs xrksvi";
+        NSString *testString = @"Gsrh rh zm vcznkov lu gsv Zgyzhs Xrksvi!!";
         NSString *upperCaseAlphabet = @"ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         NSString *lowerCaseAlphabet = @"abcdefghijklmnopqrstuvwxyz";
         NSMutableString *cipher = [[NSMutableString alloc]init];
